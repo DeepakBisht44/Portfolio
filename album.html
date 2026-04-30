@@ -2,14 +2,21 @@
     <div class="gallery" id="gallery"></div>
 </section>
 
-<script src="data.js"></script>
 <script>
-const gallery = document.getElementById("gallery");
+const username = "YOUR_USERNAME";
+const repo = "Portfolio";
 
-projects.forEach(p => {
-    const img = document.createElement("img");
-    img.src = p.image;
-    img.title = p.title;
-    gallery.appendChild(img);
+fetch(`https://api.github.com/repos/${username}/${repo}/contents/images`)
+.then(res => res.json())
+.then(data => {
+    const gallery = document.getElementById("gallery");
+
+    data.forEach(file => {
+        if(file.type === "file"){
+            const img = document.createElement("img");
+            img.src = file.download_url;
+            gallery.appendChild(img);
+        }
+    });
 });
 </script>
