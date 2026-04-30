@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #0f172a;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: #1e293b;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #334155;
+}
+
+nav a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: #475569;
+}
+
+section {
+    padding: 40px;
+}
+
+.skill {
+    margin: 10px 0;
+}
+
+.progress {
+    background: #334155;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress div {
+    height: 100%;
+    background: #38bdf8;
+    border-radius: 5px;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #38bdf8;
+    color: black;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e293b;
+}
