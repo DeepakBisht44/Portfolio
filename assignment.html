@@ -1,22 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Assignments</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+</nav>
+
 <section class="card">
-    <ul class="assignments" id="assignList"></ul>
+    <iframe 
+        src="https://drive.google.com/embeddedfolderview?id=1Fff0IdpwHHq0eyERI6slWegiXNA99eoZ#list" 
+        style="width:100%; height:500px; border:0;">
+    </iframe>
 </section>
 
-<script>
-const username = "deepakbisht44";
-const repo = "Portfolio";
-
-fetch(`https://api.github.com/repos/${username}/${repo}/contents/assignments`)
-.then(res => res.json())
-.then(data => {
-    const list = document.getElementById("assignList");
-
-    data.forEach(file => {
-        if(file.type === "file"){
-            const li = document.createElement("li");
-            li.innerHTML = `<a href="${file.download_url}" target="_blank">${file.name}</a>`;
-            list.appendChild(li);
-        }
-    });
-});
-</script>
+</body>
+</html>
