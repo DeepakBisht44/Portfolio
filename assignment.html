@@ -2,13 +2,21 @@
     <ul class="assignments" id="assignList"></ul>
 </section>
 
-<script src="data.js"></script>
 <script>
-const list = document.getElementById("assignList");
+const username = "YOUR_USERNAME";
+const repo = "Portfolio";
 
-assignments.forEach(a => {
-    const li = document.createElement("li");
-    li.innerHTML = `<a href="${a.file}" target="_blank">${a.name}</a>`;
-    list.appendChild(li);
+fetch(`https://api.github.com/repos/${username}/${repo}/contents/assignments`)
+.then(res => res.json())
+.then(data => {
+    const list = document.getElementById("assignList");
+
+    data.forEach(file => {
+        if(file.type === "file"){
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="${file.download_url}" target="_blank">${file.name}</a>`;
+            list.appendChild(li);
+        }
+    });
 });
 </script>
