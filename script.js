@@ -1,10 +1,9 @@
-console.log("Portfolio Loaded");
-
-// Simple scroll animation (optional)
-document.querySelectorAll("nav a").forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href"))
-            .scrollIntoView({ behavior: "smooth" });
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        if(this.getAttribute("href").startsWith("#")){
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href"))
+                .scrollIntoView({ behavior: "smooth" });
+        }
     });
 });
